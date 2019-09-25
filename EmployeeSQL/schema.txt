@@ -1,0 +1,43 @@
+# ERD for EmployeesSQL
+
+Departments
+-
+dept_no INTEGER PK
+dept_name VARCHAR
+
+Dept_Employees
+-
+emp_no INTEGERS PK FK >- Employee_Titles.emp_no
+dep_no VARCHAR FK >- Dept_Manager.dept_no
+from_date VARCHAR
+to-date VARCHAR
+
+Dept_Manager
+-
+dept_no INTEGER PK FK >- Departments.dept_no
+emp_no FK >- Employees.emp_no
+from_date VARCHAR
+to_date VARCHAR
+
+Employees
+-
+emp_no INTEGER PK FK >- Dept_Employees.emp_no
+birth_date VARCHAR
+first_name VARCHAR
+last_name VARCHAR
+gender VARCHAR
+hire_date VARCHAR
+
+Salaries
+-
+emp_no INTEGER PK FK >- Dept_Manager.emp_no
+salary INTEGER
+from_date VARCHAR
+to_date VARCHAR
+
+Employee_Titles
+-
+emp_no INTEGER PK FK >- Salaries.emp_no
+title VARCHAR
+from_date VARCHAR
+to_date VARCHAR
